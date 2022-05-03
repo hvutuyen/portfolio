@@ -5,8 +5,9 @@ from django.contrib.auth.models import User
 class Projects(models.Model):
     name = models.CharField(max_length=64)
     description = models.TextField(default='', blank=True)
+    image = models.ImageField()
     created_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(User, on_delete=models.SET_NULL(), null=True, related_name='my_apps')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='my_projects')
 
     def __str__(self):
         return f'Project {self.id} {self.name}'
