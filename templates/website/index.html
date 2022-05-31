@@ -18,17 +18,20 @@
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
+
         {% for app in Projects %}
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">{{ app.name }}</h2>
+                    <img class="img" src="{{ app.photo.url }}" />
                     <p class="card-text">{{ app.description }}</p>
                 </div>
                 <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
             </div>
         </div>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}
